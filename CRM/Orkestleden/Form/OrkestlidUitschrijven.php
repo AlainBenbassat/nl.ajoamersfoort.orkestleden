@@ -30,9 +30,7 @@ class CRM_Orkestleden_Form_OrkestlidUitschrijven extends CRM_Core_Form {
       $contactId = $values['contact_id'];
 
       if ($values['remove_member'] == '1') {
-        $contact = CRM_Orkestleden_Contact::convertToOrchestraMember($values['contact_id'], $values['orchestra_group']);
-        $userId = CRM_Auditanten_User::create($contact);
-        CRM_Auditanten_Contact::setLinkBetweenUserAndContact($userId, $values['contact_id']);
+        CRM_Orkestleden_BAO::removeFromOrchestra($contactId);
       }
 
       CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/contact/view', "reset=1&cid=$contactId"));

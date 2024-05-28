@@ -3,12 +3,12 @@
   <h3>Gevolgen:</h3>
   <ol>
     <li>het contact gaat uit de groep 'Orkestleden (huidige)'</li>
-    <li>het contact wordt lid gemaakt van de groep 'oud-leden'</li>
+    <li>het contact wordt lid gemaakt van de groep 'Oud-leden'</li>
     <li>het contact wordt lid gemaakt van de groep 'Nieuwsbriefabonnees'</li>
-    <li>het contact verliest de WP-gebruikersstatus 'Orkestlid', maar blijft 'Abonnee'</li>
     <li>het lidmaatschap wordt beëindigd</li>
     <li>zijn/haar ouders gaan uit de groep 'ouders'</li>
     <li>zijn/haar ouders worden lid gemaakt van de groep 'Nieuwsbriefabonnees'</li>
+    <li>het contact verliest de WP-gebruikersstatus 'Orkestlid', maar blijft 'Abonnee'</li>
   </ol>
 </div>
 

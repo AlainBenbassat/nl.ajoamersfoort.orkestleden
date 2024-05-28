@@ -5,7 +5,7 @@ require_once 'orkestleden.civix.php';
 use CRM_Orkestleden_ExtensionUtil as E;
 
 function orkestleden_civicrm_summaryActions(&$actions, $contactID) {
-  if (CRM_Orkestleden_Contact::isOrchestraMember($contactID)) {
+  if (CRM_Orkestleden_BAO::isOrchestraMember($contactID)) {
     // add menu
     $actions['otherActions']['schrap_orkestlid'] = [
       'title' => 'Orkestlid uitschrijven?',
