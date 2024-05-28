@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/orkestlid-uitschrijven</path>
+    <page_callback>CRM_Orkestleden_Form_OrkestlidUitschrijven</page_callback>
+    <title>OrkestlidUitschrijven</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
