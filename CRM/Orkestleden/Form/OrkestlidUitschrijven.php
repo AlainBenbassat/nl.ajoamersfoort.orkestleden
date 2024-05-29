@@ -31,6 +31,7 @@ class CRM_Orkestleden_Form_OrkestlidUitschrijven extends CRM_Core_Form {
 
       if ($values['remove_member'] == '1') {
         CRM_Orkestleden_BAO::removeFromOrchestra($contactId);
+        CRM_Core_Session::setStatus('Het contact is aangepast', '', 'success');
       }
 
       CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/contact/view', "reset=1&cid=$contactId"));
