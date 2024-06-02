@@ -5,7 +5,8 @@ class CRM_Orkestleden_BAO {
     try {
       // 1. het contact gaat uit de groep 'Orkestleden (huidige)'
       // 2. het contact wordt lid gemaakt van de groep 'Oud-leden'
-      CRM_Ajocommon_GroupContact::swapGroup($contactId, CRM_Ajocommon_Group::GROUP_ID_Orkestleden_huidige, CRM_Ajocommon_Group::GROUP_ID_Orkestleden_oud);
+      CRM_Ajocommon_GroupContact::delete($contactId, CRM_Ajocommon_Group::GROUP_ID_Orkestleden_huidige);
+      CRM_Ajocommon_GroupContact::create($contactId, CRM_Ajocommon_Group::GROUP_ID_Orkestleden_oud);
 
       // 3. het contact wordt lid gemaakt van de groep 'Nieuwsbriefabonnees'
       CRM_Ajocommon_GroupContact::create($contactId, CRM_Ajocommon_Group::GROUP_ID_Nieuwsbriefabonnees);
