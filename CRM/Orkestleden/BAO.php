@@ -7,6 +7,7 @@ class CRM_Orkestleden_BAO {
       // 2. het contact wordt lid gemaakt van de groep 'Oud-leden'
       CRM_Ajocommon_GroupContact::delete($contactId, CRM_Ajocommon_Group::GROUP_ID_Orkestleden_huidige);
       CRM_Ajocommon_GroupContact::create($contactId, CRM_Ajocommon_Group::GROUP_ID_Orkestleden_oud);
+      self::updateOrchestraMemberUntilYear($contactId);
 
       // 3. het contact wordt lid gemaakt van de groep 'Nieuwsbriefabonnees'
       CRM_Ajocommon_GroupContact::create($contactId, CRM_Ajocommon_Group::GROUP_ID_Nieuwsbriefabonnees);
@@ -59,5 +60,12 @@ class CRM_Orkestleden_BAO {
     else {
       return FALSE;
     }
+  }
+
+  public static function updateOrchestraMemberUntilYear($contactId) {
+    \Civi\Api4\Contact::update(FALSE)
+      ->addValue('Extra_orkestlid_info.Lid_tm', date('Y'))
+      ->addWhere('id', '=', $contactId)
+      ->execute();
   }
 }
